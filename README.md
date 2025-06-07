@@ -1,68 +1,104 @@
-# disciplina
-A practical and engaging way to track personal growth using Maslow's hierarchy of needs.
+# **🎮 Disciplina**  
+A practical and engaging way to track personal growth using **Maslow's hierarchy of needs**.
 
-This is an exciting project! Disciplina sounds like a practical and engaging way to track personal growth using Maslow's hierarchy of needs. Since you want to build it using **HTML, JavaScript, and PocketBase**, here's a structured approach to achieve your vision.
+---
 
-### 1. **Project Structure**
-Your app needs:
-- A **frontend** built with HTML, CSS, and JavaScript.
-- A **backend** powered by **PocketBase** for user authentication, checkpoint tracking, and data storage.
+## 🚀 **Features**  
+✅ Track progress across different **levels of personal growth**  
+✅ Mark checkpoints as **complete**  
+✅ View structured **progress insights**  
+✅ Fully **self-hosted**—simple setup, no complex configurations  
 
-### 2. **Setting Up PocketBase**
-1. Download and set up [PocketBase](https://pocketbase.io/).
-2. Run PocketBase locally and define a **collection** for users and checkpoints:
-   - Users can have attributes like `name`, `email`, and `progress`.
-   - Checkpoints can have fields like `level`, `title`, `status` (`complete` or `incomplete`).
+---
 
-3. Expose API endpoints so the frontend can **read and update** checkpoint statuses.
+## 🛠 **How to Get Started**  
 
-### 3. **Building the Frontend**
-1. Create an **index.html** file with sections for each level.
-2. Implement a **progress tracker** in the top-right corner using JavaScript.
-3. Use **fetch()** to get and update checkpoint statuses via PocketBase.
+### 1️⃣ **Clone & Run**  
+```bash
+git clone https://github.com/petrusjohannesmaas/disciplina.git
+cd disciplina
+docker-compose up -d
+```
+Then, open **`http://localhost:3000`** in your browser to start tracking your progress.  
 
-**Example Code Snippet (Fetching Checkpoints from PocketBase):**
-```javascript
-async function fetchCheckpoints() {
-    const response = await fetch("http://localhost:8090/api/collections/checkpoints/records");
-    const data = await response.json();
-    console.log(data);
-}
-fetchCheckpoints();
+---
+
+## 📦 **Dockerized Setup (Behind the Scenes)**  
+Everything is handled inside a **Docker container** with **SQLite for data storage**.
+
+### **Docker Compose Configuration (`docker-compose.yml`)**  
+```yaml
+version: '3'
+services:
+  disciplina:
+    build: .
+    container_name: disciplina_container
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./database:/app/database  # Persist user progress
+    restart: unless-stopped
+```
+This ensures **all progress is saved**, even when restarting the container.
+
+---
+
+## 🏗 **Database Schema (`SQLite`)**  
+Each **checkpoint** is stored as an entry inside a structured database.
+
+### **Checkpoints Table Schema**
+```sql
+CREATE TABLE checkpoints (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    level TEXT NOT NULL,
+    title TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'incomplete'
+);
 ```
 
-### 4. **Marking Checkpoints as Complete**
-Each checkpoint should have a **button** to mark it as complete. When clicked, it should update PocketBase and refresh the tracker.
+### **Insert Sample Data**
+```sql
+INSERT INTO checkpoints (level, title, status) VALUES 
+('Physiological Needs', 'Find source of food and water', 'incomplete'),
+('Safety Needs', 'Learn self-defense techniques', 'incomplete'),
+('Love & Belonging Needs', 'Organize social gatherings', 'incomplete');
+```
 
+---
+
+## 📊 **How It Works**  
+- **Progress tracking** is handled via simple database queries.  
+- **Checkpoint completion** updates the database dynamically.  
+- **Visualization** (charts, progress bars) provides insights into growth.  
+
+### **Mark Checkpoints as Complete**
 ```javascript
-async function markCheckpointComplete(id) {
-    await fetch(`http://localhost:8090/api/collections/checkpoints/records/${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status: "complete" })
-    });
-    updateProgressTracker();
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('./database.sqlite');
+
+function completeCheckpoint(id) {
+    db.run(`UPDATE checkpoints SET status = 'complete' WHERE id = ?`, [id]);
 }
 ```
 
-### 5. **Building the Progress Tracker**
-- Count **completed checkpoints** and display them in the top-right corner.
-- Use a **progress bar or percentage tracker** for visualization.
-
+### **Fetch Completed Checkpoints**
 ```javascript
-function updateProgressTracker() {
-    let completed = document.querySelectorAll(".checkpoint.complete").length;
-    document.getElementById("progress-tracker").innerText = `Completed: ${completed}`;
-}
+db.all("SELECT * FROM checkpoints WHERE status = 'complete'", [], (err, rows) => {
+    console.log(rows);  // Use this data for progress tracking
+});
 ```
 
-### 6. **Enhancements**
-- Store progress **per user**.
-- Use **localStorage** to cache progress if offline.
-- Add **animations** when checkpoints are completed.
+---
 
-### Future enhancements:
+## 🎯 **Future Improvements**  
+🔹 Advanced AI insights into personal growth  
+🔹 Custom goal-setting features  
+🔹 Weekly reflection prompts for better self-awareness  
 
-- Add a Vision section
-- Add core goals and dreams
-- Add actionable steps and timelines using AI
+---
+
+## 📜 **License**  
+GNU General Public License v3.0  
+See [LICENSE](./LICENSE)  
+
+---
