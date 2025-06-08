@@ -1,0 +1,166 @@
+{
+  "levels": [
+    {
+      "level": 1,
+      "name": "Survival",
+      "title": "Gather essential resources for survival",
+      "checkpoints": [
+        {
+          "task": "Find source of food and water",
+          "lore": "In the harsh silence of the wild, you stumble upon a hidden spring and learn to forage edible plants — your first step toward survival.",
+        "xp": "5"
+        },
+        {
+          "task": "Build a shelter for protection",
+          "lore": "Using branches, stone, and your will to survive, you raise your first shelter — crude but comforting beneath the starlit sky.",
+        "xp": "10"
+        },
+        {
+          "task": "Prepare for winter and summer",
+          "lore": "You gather wool for the cold and shade for the heat, learning that survival isn't a moment — it's a rhythm with the seasons.",
+        "xp": "15"
+        },
+        {
+          "task": "Obtain medical supplies to treat injuries",
+          "lore": "After your first brush with danger, you seek out herbs, salves, and knowledge, transforming fear into preparedness.",
+        "xp": "20"
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "name": "The Fortress",
+      "title": "Establish a secure environment",
+      "checkpoints": [
+        {
+          "task": "Construct defensive structures around your camp",
+          "lore": "You raise walls of stone and sharpened wood, not just to keep danger out — but to claim this place as your own.",
+        "xp": "25"
+        },
+        {
+          "task": "Form alliances with trustworthy allies",
+          "lore": "Strangers become partners as you trade stories by firelight and swear silent pacts of mutual survival.",
+        "xp": "30"
+        },
+        {
+          "task": "Learn self-defense techniques",
+          "lore": "You train daily, learning to read motion like language — every strike a sentence in the grammar of survival.",
+        "xp": "35"
+        },
+        {
+          "task": "Create a dependable source of income",
+          "lore": "Through trade, crafting, or service, you carve out stability in a world where chaos whispers at every edge.",
+        "xp": "40"
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "name": "The Community",
+      "title": "Build strong relationships and a sense of community",
+      "checkpoints": [
+        {
+          "task": "Befriend and recruit new allies",
+          "lore": "Each handshake, each shared meal expands the circle — until you're no longer just surviving, but belonging.",
+        "xp": "45"
+        },
+        {
+          "task": "Organize social gatherings and bonding activities",
+          "lore": "Laughter echoes through the camp as stories and songs bind you all in moments that outlast hardship.",
+        "xp": "50"
+        },
+        {
+          "task": "Mediate conflicts among group members",
+          "lore": "You become the quiet voice of reason — where swords might clash, your words bring calm.",
+        "xp": "55"
+        },
+        {
+          "task": "Support and uplift your allies",
+          "lore": "With a hand on a shoulder or a timely word, you remind others of their worth — and find yours reflected in them.",
+        "xp": "60"
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "name": "The Paragon",
+      "title": "Achieve personal accomplishments and recognition",
+      "checkpoints": [
+        {
+          "task": "Complete challenging missions to gain respect",
+          "lore": "Whispers of your name spread through the region — not for the tales you tell, but the ones others tell about you.",
+        "xp": "65"
+        },
+        {
+          "task": "Improve skills and gain mastery in various fields",
+          "lore": "You sharpen tools and mind alike, until mastery becomes second nature and failure becomes fuel.",
+        "xp": "70"
+        },
+        {
+          "task": "Earn titles and accolades from peers",
+          "lore": "With every earned honor, you stand taller — not above others, but among them, as a symbol of what's possible.",
+        "xp": "75"
+        },
+        {
+          "task": "Help others to boost your reputation",
+          "lore": "You lift others into their own greatness — and in doing so, you rise with them.",
+        "xp": "80"
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "name": "The Summit",
+      "title": "Reach your full potential and achieve self-fulfillment",
+      "checkpoints": [
+        {
+          "task": "Pursue creative projects and innovations",
+          "lore": "Ideas flow like rivers — from brushstroke to blueprint, you craft echoes of your soul into the world.",
+        "xp": "85"
+        },
+        {
+          "task": "Mentor and inspire others",
+          "lore": "You become the spark that lights new flames — a guide not just for paths walked, but for those yet dreamed.",
+        "xp": "90"
+        },
+        {
+          "task": "Explore and understand your true purpose",
+          "lore": "Through reflection and trial, you distill your experiences into clarity — and find meaning stitched through your journey.",
+        "xp": "95"
+        },
+        {
+          "task": "Achieve a state of balance and enlightenment",
+          "lore": "You walk with grace in chaos and stillness alike, no longer seeking — simply being.",
+        "xp": "100"
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "name": "The Transcendence",
+      "title": "Go beyond self-fulfillment and contribute to the greater good",
+      "checkpoints": [
+        {
+          "task": "Lead large-scale humanitarian missions",
+          "lore": "Your influence stretches wide — not through dominance, but through compassion that rallies the willing.",
+        "xp": "105"
+        },
+        {
+          "task": "Advocate for social justice and equality",
+          "lore": "You stand where others fall silent — a voice for those unheard, shaking the halls of power with truth.",
+        "xp": "110"
+        },
+        {
+          "task": "Engage in practices promoting mental and spiritual well-being",
+          "lore": "You nurture the unseen — the inner garden of the mind — and teach others to tend theirs.",
+        "xp": "115"
+        },
+        {
+          "task": "Leave a lasting legacy for future generations",
+          "lore": "Stone may crumble and names may fade, but your actions ripple across time like light on water.",
+        "xp": "120"
+        }
+      ]
+    }
+  ]
+}
